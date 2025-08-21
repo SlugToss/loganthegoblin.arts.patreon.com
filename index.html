@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>logan.goblinarts — Creator Support (Demo)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      --bg: #0f1220;
+      --card: #171a2b;
+      --muted: #9aa3b2;
+      --text: #e8ecf3;
+      --accent: #7aa2ff;
+      --accent-2: #a77bff;
+      --success: #55d69e;
+      --warning: #ffd166;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: radial-gradient(1000px 600px at 10% -10%, rgba(122,162,255,.12), transparent), radial-gradient(800px 500px at 110% 10%, rgba(167,123,255,.12), transparent), var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .banner {
+      background: linear-gradient(90deg, rgba(122,162,255,.15), rgba(167,123,255,.15));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px; padding: 10px 14px; text-align: center; font-size: 14px; color: var(--muted);
+      backdrop-filter: blur(6px);
+    }
+    .banner strong { color: var(--text); }
+    header.hero {
+      display: grid; grid-template-columns: 110px 1fr auto; gap: 20px; align-items: center; margin-top: 20px; padding: 22px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius);
+    }
+    .avatar { width: 110px; height: 110px; border-radius: 20px; background: linear-gradient(135deg, #7aa2ff, #a77bff); display: grid; place-items: center; box-shadow: var(--shadow); }
+    .avatar span { font-weight: 800; font-size: 28px; color: white; }
+    .hero h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: .2px; }
+    .hero p { margin: 0; color: var(--muted); }
+    .hero .link-chip {
+      justify-self: end; padding: 10px 14px; border-radius: 999px; border: 1px dashed rgba(255,255,255,.14); color: var(--muted); font-size: 14px;
+    }
+
+    .cta-bar { display: flex; gap: 12px; margin-top: 18px; }
+    .btn { padding: 12px 16px; border-radius: 12px; font-weight: 700; border: 1px solid transparent; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--shadow);
+      transition: transform .06s ease, filter .2s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; }
+    .btn.secondary { background: rgba(255,255,255,.04); color: var(--text); border-color: rgba(255,255,255,.08); }
+
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); margin-top: 22px; }
+    .col-span-8 { grid-column: span 8; }
+    .col-span-4 { grid-column: span 4; }
+    @media (max-width: 900px) {
+      header.hero { grid-template-columns: 80px 1fr; }
+      .hero .link-chip { grid-column: 1 / -1; justify-self: start; }
+      .grid { grid-template-columns: 1fr; }
+      .col-span-8, .col-span-4 { grid-column: auto; }
+    }
+
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .card .hd { padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; justify-content: space-between; align-items: center; }
+    .card .hd h3 { margin: 0; font-size: 18px; }
+    .card .bd { padding: 18px; }
+    .muted { color: var(--muted); }
+
+    .tiers { display: grid; gap: 14px; }
+    .tier { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 16px; display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+    .tier h4 { margin: 0; font-size: 16px; }
+    .tier .price { font-weight: 800; }
+    .tier .perks { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+
+    .goal { display: flex; align-items: center; gap: 10px; margin: 12px 0; }
+    .bar { height: 10px; border-radius: 999px; background: rgba(255,255,255,.08); position: relative; overflow: hidden; }
+    .bar > span { position: absolute; inset: 0; width: var(--w, 50%); background: linear-gradient(90deg, var(--success), var(--accent)); }
+
+    .post { padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02); margin-bottom: 12px; }
+    .post h5 { margin: 0 0 6px; }
+
+    footer { margin: 32px 0 20px; color: var(--muted); font-size: 12px; text-align: center; }
+    .disclaimer { color: #ffb4b4; font-weight: 700; }
+  </style>
+</head>
+<body>
+  
+    <header class="hero">
+      <div class="avatar"><span>GA</span></div>
+      <div>
+        <h1>GoblinArts — Support Logan</h1>
+        <p class="muted">Illustrations, creature designs, and behind-the-scenes process videos every week.</p>
+        <div class="cta-bar">
+          <a class="btn primary" href="https://logan.goblinarts.example.com/join" target="_blank" rel="noopener noreferrer">Become a supporter</a>
+          <a class="btn secondary" href="#tiers">View tiers</a>
+        </div>
+      </div>
+      <div class="link-chip">🔗 logan.goblinarts</div>
+    </header>
+
+    <div class="grid">
+      <section class="col-span-8">
+        <div class="card">
+          <div class="hd">
+            <h3>About</h3>
+            <span class="muted">Updated weekly</span>
+          </div>
+          <div class="bd">
+            <p>Welcome to my cozy goblin cave! I’m Logan, the artist behind <strong>GoblinArts</strong>. Your support helps me spend more time crafting high-res creature art packs, step-by-step timelapses, and printable resources for fellow fantasy artists.</p>
+            <div class="goal">
+              <div class="bar" style="flex:1"><span style="--w:72%"></span></div>
+              <div class="muted">72% to new tablet</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="hd">
+            <h3>Recent posts</h3>
+            <a class="muted" href="https://logan.goblinarts.example.com/posts" target="_blank" rel="noopener noreferrer">See all</a>
+          </div>
+          <div class="bd">
+            <article class="post">
+              <h5>📦 August Art Pack — Mosswyrm</h5>
+              <p class="muted">High-res PNGs, layered PSD, brushes, and a 15-minute breakdown.</p>
+            </article>
+            <article class="post">
+              <h5>🎥 Process video — Painting bioluminescence</h5>
+              <p class="muted">From thumbnail to final, narrated in real-time (28 min).</p>
+            </article>
+            <article class="post">
+              <h5>📝 Sketchbook dump #42</h5>
+              <p class="muted">Creatures, mushrooms, and some messy thumbnails.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <aside class="col-span-4" id="tiers">
+        <div class="card">
+          <div class="hd"><h3>Tiers</h3><span class="muted">Cancel anytime</span></div>
+          <div class="bd tiers">
+            <div class="tier">
+              <div>
+                <h4>Sprout</h4>
+                <p class="perks">Early-post access, polls, Discord role</p>
+              </div>
+              <div style="text-align:right">
+                <div class="price">$3 / mo</div>
+                <a class="btn secondary" href="https://logan.goblinarts.example.com/join?sprout" target="_blank" rel="noopener">Join</a>
+              </div>
+            </div>
+            <div class="tier">
+              <div>
+                <h4>Forager</h4>
+                <p class="perks">Everything in Sprout + monthly art pack</p>
+              </div>
+              <div style="text-align:right">
+                <div class="price">$7 / mo</div>
+                <a class="btn secondary" href="https://logan.goblinarts.example.com/join?forager" target="_blank" rel="noopener">Join</a>
+              </div>
+            </div>
+            <div class="tier">
+              <div>
+                <h4>Wyrmkeeper</h4>
+                <p class="perks">All previous + PSDs, brushes, and process videos</p>
+              </div>
+              <div style="text-align:right">
+                <div class="price">$12 / mo</div>
+                <a class="btn secondary" href="https://logan.goblinarts.example.com/join?wyrmkeeper" target="_blank" rel="noopener">Join</a>
+              </div>
+            </div>
+            <div class="tier" style="border:1px solid rgba(255,255,255,.2)">
+              <div>
+                <h4>Commission Slot <span style="color:var(--warning); font-weight:700">(limited)</span></h4>
+                <p class="perks">1 small creature portrait per month + name in credits</p>
+              </div>
+              <div style="text-align:right">
+                <div class="price">$45 / mo</div>
+                <a class="btn primary" href="https://logan.goblinarts.example.com/join?commission" target="_blank" rel="noopener">Reserve</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="hd"><h3>FAQ</h3></div>
+          <div class="bd">
+            <p><strong>Is this Patreon?</strong><br><span class="muted">No. This is a standalone creator-support demo page for <em>logan.goblinarts</em>. It is not affiliated with Patreon.</span></p>
+            <p><strong>Can I use this template?</strong><br><span class="muted">Yes — it’s a simple HTML/CSS file you can host and customize freely.</span></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>© <span id="year"></span> GoblinArts. Demo page for <strong>logan.goblinarts</strong>. No affiliation with Patreon.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
